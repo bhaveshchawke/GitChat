@@ -19,8 +19,6 @@ function ChatBox({ activeRepo }) {
       {/* Top Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-800 bg-black z-10">
         <div className="flex items-center gap-3">
-          <Database size={18} className="text-gray-400 hidden sm:block" />
-          <span className="text-gray-400 text-sm font-medium">Selected:</span>
           <span className="bg-white text-black px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200">
             {activeRepo || 'No repo selected'}
           </span>
@@ -36,13 +34,6 @@ function ChatBox({ activeRepo }) {
               <span className="hidden sm:inline">Clear Chat</span>
             </button>
           )}
-          <div className="h-6 w-px bg-gray-800 hidden sm:block"></div>
-          <button className="text-gray-400 hover:text-white transition-colors hidden sm:block">
-            <Bell size={18} />
-          </button>
-          <button className="text-gray-400 hover:text-white transition-colors">
-            <Settings size={18} />
-          </button>
         </div>
       </div>
 

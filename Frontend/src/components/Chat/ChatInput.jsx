@@ -53,13 +53,7 @@ function ChatInput({ onSendMessage, isThinking }) {
             rows={1}
           />
           <div className="flex items-center gap-2 pb-2 pr-2">
-            <button
-              type="button"
-              className="p-2.5 rounded-xl text-gray-500 hover:text-white hover:bg-zinc-800 transition-colors hidden sm:block"
-              title="Voice Input (Coming soon)"
-            >
-              <Mic size={18} />
-            </button>
+
             <button
               type="submit"
               disabled={!message.trim() || isThinking}
