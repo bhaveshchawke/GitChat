@@ -83,7 +83,7 @@ function ChatInput({ onSendMessage, isThinking }) {
             <strong>Tip:</strong> Press <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded-md text-slate-400 mx-1">Enter</kbd> to send, <kbd className="px-1.5 py-0.5 bg-slate-800 border border-slate-700 rounded-md text-slate-400 mx-1">Shift + Enter</kbd> for new line
           </span>
           <span className="text-[11px] text-slate-500 ml-auto">
-            RepoChat AI can make mistakes. Consider verifying important information.
+            GitChatAI can make mistakes. Consider verifying important information.
           </span>
         </div>
       </div>

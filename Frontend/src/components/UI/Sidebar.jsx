@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrainCircuit, X, Trash2 } from 'lucide-react';
+import { BrainCircuit, X, Trash2, Instagram, Linkedin, Mail } from 'lucide-react';
 import RepoInputForm from '../Repo/RepoInputForm';
 import { cn } from '../../utils/cn';
 
@@ -37,7 +37,7 @@ function Sidebar({ closeSidebar, activeRepo, setActiveRepo }) {
             <BrainCircuit size={22} className="text-emerald-400 drop-shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
           </div>
           <h1 className="text-xl font-bold tracking-tight bg-gradient-to-br from-white to-slate-400 bg-clip-text text-transparent">
-            RepoChat AI
+            GitChatAI
           </h1>
         </div>
         <button 
@@ -115,6 +115,24 @@ function Sidebar({ closeSidebar, activeRepo, setActiveRepo }) {
               </div>
             );
           })}
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="p-4 border-t border-slate-700/50 bg-slate-900/80 backdrop-blur-sm mt-auto">
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-xs text-slate-400 font-medium">Developed by Bhavesh</span>
+          <div className="flex gap-4">
+            <a href="https://www.instagram.com/bhaavesh.dev/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors" title="Instagram">
+              <Instagram size={16} />
+            </a>
+            <a href="https://www.linkedin.com/in/bhavesh-chawke-607785317/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-emerald-400 transition-colors" title="LinkedIn">
+              <Linkedin size={16} />
+            </a>
+            <a href="mailto:bhaveshchawke4321@gmail.com" className="text-slate-500 hover:text-emerald-400 transition-colors" title="Email">
+              <Mail size={16} />
+            </a>
+          </div>
         </div>
       </div>
     </div>

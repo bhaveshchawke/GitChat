@@ -34,8 +34,8 @@ function Dashboard() {
       <div className="flex-1 flex flex-col h-full relative min-w-0">
         {/* Mobile Header for Sidebar Toggle */}
         <div className="md:hidden flex items-center justify-between p-4 border-b border-slate-800 bg-slate-900">
-          <div className="flex items-center gap-2 font-bold text-indigo-400">
-            <span className="text-xl">RepoChat AI</span>
+          <div className="flex items-center gap-2 font-bold text-emerald-400">
+            <span className="text-xl">GitChatAI</span>
           </div>
           <button 
             onClick={() => setIsSidebarOpen(true)}
