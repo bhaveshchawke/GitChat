@@ -104,7 +104,7 @@ function Sidebar({ closeSidebar, activeRepo, setActiveRepo }) {
                 </button>
                 <button
                   onClick={(e) => handleDeleteRepo(e, repo)}
-                  className="absolute right-3 text-gray-400 hover:text-black hover:bg-gray-200 opacity-0 group-hover:opacity-100 transition-all p-2 rounded-lg"
+                  className="absolute right-3 text-gray-400 hover:text-black hover:bg-gray-200 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all p-2 rounded-lg"
                   title="Delete Chat"
                 >
                   <Trash2 size={15} />
