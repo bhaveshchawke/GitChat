@@ -31,6 +31,12 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, message: 'Server Error', error: err.message });
 });
 
-app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
-});
+// Only listen if we are not running in a serverless environment (Vercel)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    logger.info(`Server running on port ${PORT}`);
+  });
+}
+
+// Export for serverless (Vercel)
+module.exports = app;
