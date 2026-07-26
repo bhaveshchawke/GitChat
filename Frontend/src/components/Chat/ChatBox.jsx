@@ -1,11 +1,11 @@
 import React from 'react';
-import { Search, MessageSquare, Code, Zap, Trash2, Bell, Settings, Database, BrainCircuit, Sparkles } from 'lucide-react';
+import { Search, MessageSquare, Code, Zap, Trash2, Bell, Settings, Database, BrainCircuit, Sparkles, Menu } from 'lucide-react';
 import MessageBubble from './MessageBubble';
 import ChatInput from './ChatInput';
 import { useChat } from '../../hooks/useChat';
 import { cn } from '../../utils/cn';
 
-function ChatBox({ activeRepo }) {
+function ChatBox({ activeRepo, onMenuClick }) {
   const { messages, isThinking, sendMessage, clearChat, messagesEndRef } = useChat(activeRepo);
 
   const suggestionChips = [
@@ -19,7 +19,13 @@ function ChatBox({ activeRepo }) {
       {/* Top Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-800 bg-black z-10">
         <div className="flex items-center gap-3">
-          <span className="bg-white text-black px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200">
+          <button 
+            onClick={onMenuClick}
+            className="md:hidden p-1 -ml-2 text-gray-400 hover:text-white"
+          >
+            <Menu size={24} />
+          </button>
+          <span className="bg-white text-black px-3 py-1.5 rounded-lg text-sm font-semibold border border-gray-200 max-w-[150px] sm:max-w-xs truncate">
             {activeRepo || 'No repo selected'}
           </span>
         </div>

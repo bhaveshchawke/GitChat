@@ -32,20 +32,10 @@ function Dashboard() {
 
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col h-full relative min-w-0">
-        {/* Mobile Header for Sidebar Toggle */}
-        <div className="md:hidden flex items-center justify-between p-4 border-b border-gray-800 bg-black">
-          <div className="flex items-center gap-2 font-bold text-white">
-            <span className="text-xl">GitChatAI</span>
-          </div>
-          <button 
-            onClick={() => setIsSidebarOpen(true)}
-            className="p-2 text-gray-400 hover:text-white"
-          >
-            <Menu size={24} />
-          </button>
-        </div>
-
-        <ChatBox activeRepo={activeRepo} />
+        <ChatBox 
+          activeRepo={activeRepo} 
+          onMenuClick={() => setIsSidebarOpen(true)} 
+        />
       </div>
     </div>
   );
