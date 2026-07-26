@@ -8,7 +8,7 @@ function Dashboard() {
   const [activeRepo, setActiveRepo] = useState(null);
 
   return (
-    <div className="flex h-screen w-full bg-slate-900 text-slate-100 overflow-hidden">
+    <div className="flex h-screen w-full bg-black text-white overflow-hidden">
       {/* Mobile Sidebar Overlay */}
       {isSidebarOpen && (
         <div 
@@ -19,7 +19,7 @@ function Dashboard() {
 
       {/* Sidebar */}
       <div 
-        className={`fixed md:static inset-y-0 left-0 z-50 w-3/4 md:w-1/4 max-w-sm bg-slate-900 border-r border-slate-800 transition-transform duration-300 ease-in-out transform ${
+        className={`fixed md:static inset-y-0 left-0 z-50 w-3/4 md:w-1/4 max-w-sm bg-white border-r border-gray-200 transition-transform duration-300 ease-in-out transform ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
       >
@@ -33,13 +33,13 @@ function Dashboard() {
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col h-full relative min-w-0">
         {/* Mobile Header for Sidebar Toggle */}
-        <div className="md:hidden flex items-center justify-between p-4 border-b border-slate-800 bg-slate-900">
-          <div className="flex items-center gap-2 font-bold text-emerald-400">
+        <div className="md:hidden flex items-center justify-between p-4 border-b border-gray-800 bg-black">
+          <div className="flex items-center gap-2 font-bold text-white">
             <span className="text-xl">GitChatAI</span>
           </div>
           <button 
             onClick={() => setIsSidebarOpen(true)}
-            className="p-2 text-slate-400 hover:text-slate-200"
+            className="p-2 text-gray-400 hover:text-white"
           >
             <Menu size={24} />
           </button>

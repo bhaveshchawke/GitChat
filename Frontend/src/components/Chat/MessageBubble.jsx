@@ -14,18 +14,18 @@ function MessageBubble({ message }) {
       <div className={cn(
         "flex max-w-[85%] gap-4 rounded-2xl p-5 shadow-lg transition-all",
         isUser 
-          ? "bg-gradient-to-br from-indigo-600 to-indigo-700 text-white shadow-[0_4px_15px_rgba(79,70,229,0.3)] rounded-br-sm" 
-          : "bg-slate-900/60 backdrop-blur-xl text-slate-200 border border-slate-700/60 shadow-[0_8px_30px_rgba(0,0,0,0.12)] rounded-bl-sm"
+          ? "bg-white text-black rounded-br-sm" 
+          : "bg-zinc-900 text-white border border-zinc-800 rounded-bl-sm"
       )}>
         {/* Avatar */}
         <div className="flex-shrink-0 mt-0.5">
           {isUser ? (
-            <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md border border-white/10 shadow-inner">
+            <div className="w-9 h-9 rounded-full bg-black flex items-center justify-center shadow-inner">
               <User size={18} className="text-white" />
             </div>
           ) : (
-            <div className="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-              <Bot size={18} className="text-emerald-400 drop-shadow-[0_0_5px_rgba(52,211,153,0.8)]" />
+            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-md">
+              <Bot size={18} className="text-black" />
             </div>
           )}
         </div>
@@ -52,14 +52,14 @@ function MessageBubble({ message }) {
                     if (!inline && match) {
                       return (
                         <div className="relative mt-4 mb-4 rounded-lg overflow-hidden border border-slate-700 bg-[#1e1e1e]">
-                          <div className="flex items-center justify-between px-4 py-2 bg-slate-800 border-b border-slate-700">
-                            <span className="text-xs font-mono text-slate-400">{match[1]}</span>
+                          <div className="flex items-center justify-between px-4 py-2 bg-zinc-900 border-b border-zinc-800">
+                            <span className="text-xs font-mono text-gray-400">{match[1]}</span>
                             <button
                               onClick={handleCopy}
-                              className="text-slate-400 hover:text-white transition-colors"
+                              className="text-gray-400 hover:text-white transition-colors"
                               title="Copy code"
                             >
-                              {copied ? <Check size={16} className="text-emerald-500" /> : <Copy size={16} />}
+                              {copied ? <Check size={16} className="text-white" /> : <Copy size={16} />}
                             </button>
                           </div>
                           <SyntaxHighlighter
@@ -78,7 +78,7 @@ function MessageBubble({ message }) {
                       );
                     }
                     return (
-                      <code {...props} className={cn("bg-slate-700 px-1.5 py-0.5 rounded text-emerald-300", className)}>
+                      <code {...props} className={cn("bg-zinc-800 px-1.5 py-0.5 rounded text-white border border-zinc-700", className)}>
                         {children}
                       </code>
                     );

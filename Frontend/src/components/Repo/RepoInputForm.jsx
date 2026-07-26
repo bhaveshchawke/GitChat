@@ -42,7 +42,7 @@ function RepoInputForm({ onAnalyze }) {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="relative group">
-        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-emerald-500/70 group-focus-within:text-emerald-400 transition-colors">
+        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400 group-focus-within:text-black transition-colors">
           <GitBranch size={18} />
         </div>
         <input
@@ -50,7 +50,7 @@ function RepoInputForm({ onAnalyze }) {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           placeholder="Paste GitHub Repo URL..."
-          className="w-full bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 text-slate-200 text-sm rounded-xl focus:ring-0 focus:border-emerald-500/50 focus:shadow-[0_0_15px_rgba(16,185,129,0.15)] block pl-10 p-3 placeholder-slate-500 transition-all outline-none"
+          className="w-full bg-white border border-gray-300 text-black text-sm rounded-xl focus:ring-1 focus:ring-black focus:border-black block pl-10 p-3 placeholder-gray-400 transition-all outline-none"
           disabled={isProcessing}
         />
       </div>
@@ -59,13 +59,10 @@ function RepoInputForm({ onAnalyze }) {
         type="submit"
         disabled={isProcessing || !url}
         className={cn(
-          "w-full flex items-center justify-center gap-2 text-white bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_25px_rgba(16,185,129,0.4)] font-medium rounded-xl text-sm px-5 py-3 text-center transition-all duration-300 relative overflow-hidden",
-          (isProcessing || !url) && "opacity-70 cursor-not-allowed hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]"
+          "w-full flex items-center justify-center gap-2 text-white bg-black hover:bg-gray-800 font-medium rounded-xl text-sm px-5 py-3 text-center transition-all duration-300 relative overflow-hidden",
+          (isProcessing || !url) && "opacity-70 cursor-not-allowed"
         )}
       >
-        {/* Subtle internal top glow */}
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-white/30" />
-        
         {isProcessing ? (
           <>
             <Loader2 size={18} className="animate-spin" />
